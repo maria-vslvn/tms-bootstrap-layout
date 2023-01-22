@@ -1,0 +1,33 @@
+.icon {
+  width: 10rem;
+  height: 10rem;
+  background: {
+    size: contain;
+    repeat: no-repeat;
+    position: center;
+  }
+
+  &-star {
+    background-image: url("../img/icons/star-icon.svg");
+  }
+
+  &-light {
+    background-image: url("../img/icons/light-icon.svg");
+  }
+
+  &-new-file {
+    background-image: url("../img/icons/new-file-icon.svg");
+  }
+
+  &-time {
+    background-image: url("../img/icons/time-icon.svg");
+  }
+
+  &-display {
+    background-image: url("../img/icons/display-icon.svg");
+  }
+
+  &-cart {
+    background-image: url("../img/icons/cart-icon.svg");
+  }
+}

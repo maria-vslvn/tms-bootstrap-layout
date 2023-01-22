@@ -1,0 +1,82 @@
+$i: 0;
+@for $i from 0 to 10 {
+  .flex-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+.d-grid {
+  display: grid;
+}
+
+.txt {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: $grey-dark;
+
+  &-b {
+    font-weight: $fw-b;
+  }
+
+  &-i {
+    font-style: italic;
+  }
+
+  &-xb {
+    font-weight: $fw-xb;
+  }
+
+  &-lg {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  &-sm {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  &-xl {
+    font-size: 3.6rem;
+    line-height: 4.9rem;
+  }
+
+  &-white {
+    color: $white;
+  }
+
+  &-primary {
+    color: $black;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+@for $i from 0 to 100 {
+  .mb-#{$i} {
+    margin-bottom: calc(#{$i}rem / 10);
+  }
+}
+
+@mixin addBg() {
+  background: {
+    image: linear-gradient(transparentize($primary, .2), transparentize($primary, .2)), url("../img/hero-bg.png");
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  height: 100vh;
+}
+
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
