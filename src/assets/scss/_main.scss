@@ -61,7 +61,7 @@ h1 {
   &:before {
     content: "";
     height: 1px;
-    background-color: $white;
+    background-color: transparentize($white, .5);
     width: calc(100% - 3rem);
     position: absolute;
     bottom:0;
@@ -97,9 +97,13 @@ main {
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       background-color: transparent;
       border: 0;
+
+      @media (min-width: $bp-sm) {
+        justify-content: center;
+      }
     }
 
     @media (min-width: $bp-md) {
@@ -143,17 +147,18 @@ main {
   }
 
   .navbar-collapse {
-    position: fixed;
+    position: absolute;
     left: -100vh;
     opacity: 0;
-    top: 10.7rem;
+    padding-top: 10.6rem;
+    top: 0;
     bottom: 0;
-    right: 0;
+    z-index: -1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    z-index: 1;
     transition: opacity 1s, left .5s;
     @include addBg;
 
@@ -338,8 +343,8 @@ main {
   justify-content: space-between;
 
   margin: {
-    top: 11.4rem;
-    bottom: 11.4rem;
+    top: 4rem;
+    bottom: 4rem;
   }
 
   &__pic {
@@ -369,6 +374,13 @@ main {
       margin-right: .6rem;
     }
   }
+
+  @media (min-width: $bp-sm) {
+    margin: {
+      top: 11.4rem;
+      bottom: 11.4rem;
+    }
+  }
 }
 
 .carousel {
@@ -394,6 +406,14 @@ main {
     justify-content: center;
     text-align: center;
     padding: 5rem;
+
+    .txt-xl {
+      margin-bottom: 3rem;
+
+      @media (min-width: $bp-sm) {
+        margin-bottom: 5rem;
+      }
+    }
 
     @media (min-width: $bp-md) {
       max-width: 50%;
@@ -430,10 +450,22 @@ main {
 
   .btn {
     margin-top: 1.3rem;
+
+    @media (min-width: $bp-sm) {
+      margin-top: 10rem;
+    }
   }
 
   .txt-sm {
     margin-top: 1rem;
+
+    @media (min-width: $bp-sm) {
+      margin-top: 3rem;
+    }
+  }
+
+  @media (min-width: $bp-sm) {
+    padding: 11.9rem 0;
   }
 }
 
